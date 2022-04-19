@@ -20,3 +20,9 @@ Route::get('/', function () {
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
+Route::get('/game/game.blade.php', function () {
+    //
+})->name('game');
+
+Route::get('checkout', 'App\Http\Controllers\CheckoutController@checkout');
+Route::post('checkout', 'App\Http\Controllers\CheckoutController@afterpayment')->name('checkout.credit-card');
